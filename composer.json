@@ -26,7 +26,7 @@
   },
   "autoload": {
     "psr-4": {
-      "AEngine\\Orchid\\Annotation\\": "src/"
+      "AEngine\\Orchid\\Annotations\\": "src/"
     }
   }
 }

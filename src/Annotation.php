@@ -1,11 +1,38 @@
 <?php
 
-namespace AEngine\Orchid\Annotation;
+namespace AEngine\Orchid\Annotations;
 
 use BadMethodCallException;
 
 abstract class Annotation
 {
+    /**
+     * Return value for a key
+     *
+     * @param string $key
+     *
+     * @return mixed
+     */
+    public function get($key)
+    {
+        return $this->$key;
+    }
+
+    /**
+     * Set value for a key
+     *
+     * @param string $key
+     * @param mixed  $value
+     *
+     * @return $this
+     */
+    public function set($key, $value)
+    {
+        $this->$key = $value;
+
+        return $this;
+    }
+
     /**
      * Set values
      *
@@ -13,7 +40,7 @@ abstract class Annotation
      *
      * @return $this
      */
-    public function setValues(array $data)
+    public function replace(array $data)
     {
         foreach ($data as $key => $value) {
             $this->$key = $value;

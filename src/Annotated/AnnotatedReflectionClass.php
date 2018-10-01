@@ -1,6 +1,6 @@
 <?php
 
-namespace AEngine\Orchid\Annotation\Annotated;
+namespace AEngine\Orchid\Annotations\Annotated;
 
 use AEngine\Orchid\Annotation\Annotation;
 use AEngine\Orchid\Annotation\AnnotationReader;

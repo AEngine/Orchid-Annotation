@@ -1,8 +1,8 @@
 <?php
 
-namespace AEngine\Orchid\Annotation\Annotations;
+namespace AEngine\Orchid\Annotations\Annotation;
 
-use AEngine\Orchid\Annotation\Annotation;
+use AEngine\Orchid\Annotations\Annotation;
 
 class AnnotationTarget extends Annotation
 {
