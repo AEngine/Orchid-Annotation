@@ -2,9 +2,9 @@
 
 namespace AEngine\Orchid\Annotations\Annotated;
 
-use AEngine\Orchid\Annotation\Annotation;
-use AEngine\Orchid\Annotation\AnnotationReader;
-use AEngine\Orchid\Annotation\Interfaces\AnnotatedInterface;
+use AEngine\Orchid\Annotations\Annotation;
+use AEngine\Orchid\Annotations\AnnotationReader;
+use AEngine\Orchid\Annotations\Interfaces\AnnotatedInterface;
 use ReflectionClass;
 use ReflectionException;
 use ReflectionMethod;
