@@ -2,7 +2,7 @@
 
 namespace AEngine\Orchid\Annotations;
 
-use AEngine\Orchid\Annotations\Annotated\AnnotatedReflectionClass;
+use AEngine\Orchid\Annotations\Annotated\ReflectionClass;
 use AEngine\Orchid\Annotations\Annotations\AnnotationTarget;
 use AEngine\Orchid\Annotations\Helper\TokenParser;
 use AEngine\Orchid\Annotations\Interfaces\AnnotatedInterface;
@@ -185,7 +185,7 @@ class AnnotationReader
             }
         }
 
-        $class = new AnnotatedReflectionClass($name);
+        $class = new ReflectionClass($name);
 
         // ensure that class is a subclass of Annotation
         if (isset($class) && $class->isSubClassOf(Annotation::class)) {
@@ -208,12 +208,12 @@ class AnnotationReader
     /**
      * Validate correct annotation use
      *
-     * @param AnnotatedInterface       $element
-     * @param AnnotatedReflectionClass $class
+     * @param AnnotatedInterface $element
+     * @param ReflectionClass    $class
      *
      * @throws ReflectionException
      */
-    protected static function validate(AnnotatedInterface $element, AnnotatedReflectionClass $class)
+    protected static function validate(AnnotatedInterface $element, ReflectionClass $class)
     {
         if ($element->getName() == 'AnnotationTarget') {
             return;
