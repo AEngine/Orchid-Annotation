@@ -14,7 +14,4 @@ Run the following command in the root directory of your web project:
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 #### License
-The Orchid Framework is licensed under the MIT license. See [License File](LICENSE.md) for more information.
-
-#### Description
-TODO
+The Orchid Annotation is licensed under the MIT license. See [License File](LICENSE.md) for more information.
