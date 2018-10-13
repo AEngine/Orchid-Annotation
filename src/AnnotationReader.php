@@ -2,10 +2,11 @@
 
 namespace AEngine\Orchid\Annotations;
 
-use AEngine\Orchid\Annotations\Annotated\ReflectionClass;
-use AEngine\Orchid\Annotations\Annotations\AnnotationTarget;
+use AEngine\Orchid\Annotations\Annotated\AnnotatedReflectionClass;
+use AEngine\Orchid\Annotations\Annotation\Target;
 use AEngine\Orchid\Annotations\Helper\TokenParser;
 use AEngine\Orchid\Annotations\Interfaces\AnnotatedInterface;
+use AEngine\Orchid\Annotations\Interfaces\AnnotationInterface;
 use ReflectionException;
 use SplFileObject;
 use RuntimeException;
@@ -185,10 +186,10 @@ class AnnotationReader
             }
         }
 
-        $class = new ReflectionClass($name);
+        $class = new AnnotatedReflectionClass($name);
 
-        // ensure that class is a subclass of Annotation
-        if (isset($class) && $class->isSubClassOf(Annotation::class)) {
+        // ensure that class is a class implement AnnotationInterface
+        if (isset($class) && $class->isSubClassOf(AnnotationInterface::class)) {
             // validate annotation target
             static::validate($element, $class);
 
@@ -208,22 +209,22 @@ class AnnotationReader
     /**
      * Validate correct annotation use
      *
-     * @param AnnotatedInterface $element
-     * @param ReflectionClass    $class
+     * @param AnnotatedInterface       $element
+     * @param AnnotatedReflectionClass $class
      *
      * @throws ReflectionException
      */
-    protected static function validate(AnnotatedInterface $element, ReflectionClass $class)
+    protected static function validate(AnnotatedInterface $element, AnnotatedReflectionClass $class)
     {
-        if ($element->getName() == 'AnnotationTarget') {
+        if ($element->getName() == Target::class) {
             return;
         }
 
-        if ($class->hasAnnotation('AnnotationTarget')) {
+        if ($class->hasAnnotation(Target::class)) {
             /**
-             * @var AnnotationTarget $target
+             * @var Target $target
              */
-            $target = $class->getAnnotation('AnnotationTarget');
+            $target = $class->getAnnotation(Target::class);
             $type = $target->get('type');
 
             if (

@@ -5,8 +5,9 @@ namespace AEngine\Orchid\Annotations\Annotated;
 use AEngine\Orchid\Annotations\AnnotationReader;
 use AEngine\Orchid\Annotations\Interfaces\AnnotatedInterface;
 use ReflectionException;
+use ReflectionMethod;
 
-class ReflectionProperty extends \ReflectionProperty implements AnnotatedInterface
+class AnnotatedReflectionMethod extends ReflectionMethod implements AnnotatedInterface
 {
     protected $annotations;
 
@@ -17,7 +18,11 @@ class ReflectionProperty extends \ReflectionProperty implements AnnotatedInterfa
      */
     public function getAnnotatedElementType()
     {
-        return 'PROPERTY';
+        if ($this->isConstructor()) {
+            return 'CONSTRUCTOR';
+        }
+
+        return 'METHOD';
     }
 
     /**

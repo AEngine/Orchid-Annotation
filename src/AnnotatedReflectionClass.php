@@ -6,10 +6,11 @@ use AEngine\Orchid\Annotations\Annotation;
 use AEngine\Orchid\Annotations\AnnotationReader;
 use AEngine\Orchid\Annotations\Interfaces\AnnotatedInterface;
 use ReflectionException;
+use ReflectionClass;
 use ReflectionMethod;
 use ReflectionProperty;
 
-class ReflectionClass extends \ReflectionClass implements AnnotatedInterface
+class AnnotatedReflectionClass extends ReflectionClass implements AnnotatedInterface
 {
     protected $annotations;
     protected $methods;
@@ -92,7 +93,7 @@ class ReflectionClass extends \ReflectionClass implements AnnotatedInterface
      *
      * @param null $filter
      *
-     * @return ReflectionMethod[]
+     * @return AnnotatedReflectionMethod[]
      * @throws ReflectionException
      */
     public function getMethods($filter = null)
@@ -113,7 +114,7 @@ class ReflectionClass extends \ReflectionClass implements AnnotatedInterface
      *
      * @param string $name
      *
-     * @return null|ReflectionMethod
+     * @return null|AnnotatedReflectionMethod
      * @throws ReflectionException
      */
     public function getMethod($name)
@@ -141,7 +142,7 @@ class ReflectionClass extends \ReflectionClass implements AnnotatedInterface
      *
      * @param null $filter
      *
-     * @return ReflectionProperty[]
+     * @return AnnotatedReflectionProperty[]
      * @throws ReflectionException
      */
     public function getProperties($filter = null)
@@ -162,7 +163,7 @@ class ReflectionClass extends \ReflectionClass implements AnnotatedInterface
      *
      * @param string $name
      *
-     * @return null|ReflectionProperty
+     * @return null|AnnotatedReflectionProperty
      * @throws ReflectionException
      */
     public function getProperty($name)

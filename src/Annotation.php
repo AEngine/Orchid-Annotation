@@ -2,9 +2,10 @@
 
 namespace AEngine\Orchid\Annotations;
 
+use AEngine\Orchid\Annotations\Interfaces\AnnotationInterface;
 use BadMethodCallException;
 
-abstract class Annotation
+abstract class Annotation implements AnnotationInterface
 {
     /**
      * Return value for a key
