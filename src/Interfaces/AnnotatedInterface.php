@@ -1,6 +1,6 @@
 <?php
 
-namespace AEngine\Orchid\Annotations\Interfaces;
+namespace AEngine\Annotations\Interfaces;
 
 use ReflectionException;
 

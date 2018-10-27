@@ -1,17 +1,15 @@
 {
-  "name": "aengine/orchid-annotation",
+  "name": "aengine/annotation",
   "description": "Annotation parser",
   "keywords": [
     "php",
-    "framework",
     "AEngine",
-    "Orchid",
     "PHPDoc",
     "DocBlock",
     "Parser",
     "Annotation"
   ],
-  "homepage": "https://gitlab.com/AEngine/Orchid/Annotation",
+  "homepage": "https://gitlab.com/AEngine/Annotation",
   "license": "MIT",
   "authors": [
     {
@@ -26,7 +24,7 @@
   },
   "autoload": {
     "psr-4": {
-      "AEngine\\Orchid\\Annotations\\": "src/"
+      "AEngine\\Annotations\\": "src/"
     }
   }
 }

@@ -1,12 +1,7 @@
 <?php
 
-namespace AEngine\Orchid\Annotations;
+namespace AEngine\Annotations;
 
-use AEngine\Orchid\Annotations\Annotated\AnnotatedReflectionClass;
-use AEngine\Orchid\Annotations\Annotation\Target;
-use AEngine\Orchid\Annotations\Helper\TokenParser;
-use AEngine\Orchid\Annotations\Interfaces\AnnotatedInterface;
-use AEngine\Orchid\Annotations\Interfaces\AnnotationInterface;
 use ReflectionException;
 use SplFileObject;
 use RuntimeException;
