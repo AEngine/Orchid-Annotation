@@ -4,6 +4,7 @@ namespace AEngine\Annotations;
 
 use AEngine\Annotations\Annotation\Target;
 use AEngine\Annotations\Interfaces\AnnotatedInterface;
+use AEngine\Annotations\Interfaces\AnnotationInterface;
 use ReflectionException;
 use SplFileObject;
 use RuntimeException;
